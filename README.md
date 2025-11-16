@@ -336,6 +336,39 @@ MERGE(A, m, B, n)
 
 ---
 
+## Cara Menjalankan
+
+### Persyaratan
+- Python 3.8+ (direkomendasikan)
+- Install dependency berikut sebelum menjalankan:
+```bash
+pip install numpy pandas
+```
+
+### Langkah Menjalankan
+1. **Clone repository ke komputer**
+    ```bash
+    git clone https://github.com/Dimassaputra5/SDA.git
+    cd SDA
+    ```
+2. **Jalankan program utama**
+    ```bash
+    python Main.py
+    ```
+   Program akan otomatis:
+   - Melakukan pengujian analisis performa algoritma (Binary Search, Linear Search, Insertion Sort, Bubble Sort, Merge Sort) beserta perhitungan Big O
+   - Semua output dan hasil ranking/fit Big O ditampilkan langsung pada terminal (console)
+
+### Catatan Tambahan
+- Tidak perlu mengedit file *.py. Seluruh pemanggilan sudah otomatis melalui Main.py.
+- Jika muncul error terkait import module, pastikan sudah menjalankan perintah `pip install` di atas pada environment Python yang benar.
+- Minimal requirements: Python versi 3.8 atau lebih baru.
+- Untuk informasi logika atau algoritma lebih detail, silakan baca README atau cek masing-masing file source di repo.
+
+Untuk kontribusi dan kendala lebih lanjut, silakan buat issue di repository terkait.
+
+---
+
 ## Framework Analisis Big O (BigOcomplexity.py)
 
 ### Deskripsi
@@ -406,32 +439,6 @@ n          Time (us)
 1600       0.0020         
 ======================================================================
 ```
-
----
-
-## Cara Menjalankan
-
-### Persyaratan
-```bash
-pip install numpy pandas
-```
-
-### Eksekusi
-```bash
-python Main.py
-```
-Program akan secara otomatis:
-1. Menjalankan analisis untuk Binary Search
-2. Menjalankan analisis untuk Linear Search
-3. Menjalankan analisis untuk Insertion Sort
-4. Menjalankan analisis untuk Bubble Sort
-5. Menjalankan analisis untuk Merge Sort
-
-Setiap analisis akan menampilkan:
-- Kelas kompleksitas terbaik yang cocok
-- Confidence score (R²)
-- Ranking semua kelas kompleksitas
-- Sample measurements
 
 ---
 

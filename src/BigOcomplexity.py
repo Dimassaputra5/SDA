@@ -162,7 +162,7 @@ class BigOAnalyzer:
         
         print("\n[MEASUREMENTS]:")
         print("-" * 70)
-        print("{:<10} {:<15}".format('n', 'Time (us)'))
+        print("{:<10} {:<15}".format('n', 'Time (ms)'))
         for n, t in analysis_result['measurements'][:5]:  # Show first 5
             print("{:<10} {:<15.4f}".format(int(n), t * 1000))
         

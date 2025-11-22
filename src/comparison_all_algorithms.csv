@@ -1,0 +1,69 @@
+Algorithm,Data Type,Input Size (n),Comparisons,Time (seconds),Complexity Class,Notes
+Linear Search,Sorted,1000,901,9.9e-05,O(n),Target at 90% position
+Binary Search,Sorted,1000,8,5e-06,O(log n),Target at 90% position
+Linear Search,Sorted,5000,4501,0.000527,O(n),Target at 90% position
+Binary Search,Sorted,5000,9,3e-06,O(log n),Target at 90% position
+Linear Search,Sorted,10000,9001,0.001059,O(n),Target at 90% position
+Binary Search,Sorted,10000,13,4e-06,O(log n),Target at 90% position
+Linear Search,Sorted,50000,45001,0.006481,O(n),Target at 90% position
+Binary Search,Sorted,50000,16,6e-06,O(log n),Target at 90% position
+Linear Search,Sorted,100000,90001,0.013969,O(n),Target at 90% position
+Binary Search,Sorted,100000,13,7e-06,O(log n),Target at 90% position
+Linear Search,Sorted,500000,450001,0.07807,O(n),Target at 90% position
+Binary Search,Sorted,500000,16,9e-06,O(log n),Target at 90% position
+Linear Search,Sorted,1000000,900001,0.16001,O(n),Target at 90% position
+Binary Search,Sorted,1000000,19,1.1e-05,O(log n),Target at 90% position
+Bubble Sort,Random,100,4940,0.0008,O(n^2),Average case
+Insertion Sort,Random,100,3008,0.0005,O(n^2),Average case
+Merge Sort,Random,100,545,0.0002,O(n log n),Consistent performance
+Bubble Sort,Random,500,124474,0.0185,O(n^2),Average case
+Insertion Sort,Random,500,60501,0.01,O(n^2),Average case
+Merge Sort,Random,500,3831,0.0012,O(n log n),Consistent performance
+Bubble Sort,Random,1000,496872,0.0812,O(n^2),Average case
+Insertion Sort,Random,1000,257622,0.0455,O(n^2),Average case
+Merge Sort,Random,1000,8735,0.0025,O(n log n),Consistent performance
+Bubble Sort,Random,2000,1998370,0.3359,O(n^2),Average case
+Insertion Sort,Random,2000,1013252,0.1818,O(n^2),Average case
+Merge Sort,Random,2000,19419,0.0055,O(n log n),Consistent performance
+Bubble Sort,Random,5000,12493930,2.1184,O(n^2),Average case
+Insertion Sort,Random,5000,6167678,1.0738,O(n^2),Average case
+Merge Sort,Random,5000,55225,0.0152,O(n log n),Consistent performance
+Bubble Sort,Random,10000,49965354,8.3754,O(n^2),Average case
+Insertion Sort,Random,10000,24892725,4.3433,O(n^2),Average case
+Merge Sort,Random,10000,120450,0.0354,O(n log n),Consistent performance
+Bubble Sort,Already Sorted,100,99,0.0,O(n),Best case with early exit
+Insertion Sort,Already Sorted,100,99,0.0,O(n),Best case - no shifts needed
+Merge Sort,Already Sorted,100,316,0.0002,O(n log n),Consistent - unaffected by input
+Bubble Sort,Already Sorted,500,499,0.0001,O(n),Best case with early exit
+Insertion Sort,Already Sorted,500,499,0.0001,O(n),Best case - no shifts needed
+Merge Sort,Already Sorted,500,2216,0.0015,O(n log n),Consistent - unaffected by input
+Bubble Sort,Already Sorted,1000,999,0.0002,O(n),Best case with early exit
+Insertion Sort,Already Sorted,1000,999,0.0003,O(n),Best case - no shifts needed
+Merge Sort,Already Sorted,1000,4932,0.003,O(n log n),Consistent - unaffected by input
+Bubble Sort,Already Sorted,2000,1999,0.0004,O(n),Best case with early exit
+Insertion Sort,Already Sorted,2000,1999,0.0007,O(n),Best case - no shifts needed
+Merge Sort,Already Sorted,2000,10864,0.0051,O(n log n),Consistent - unaffected by input
+Bubble Sort,Already Sorted,5000,4999,0.0008,O(n),Best case with early exit
+Insertion Sort,Already Sorted,5000,4999,0.0015,O(n),Best case - no shifts needed
+Merge Sort,Already Sorted,5000,29804,0.0112,O(n log n),Consistent - unaffected by input
+Bubble Sort,Already Sorted,10000,9999,0.001,O(n),Best case with early exit
+Insertion Sort,Already Sorted,10000,9999,0.002,O(n),Best case - no shifts needed
+Merge Sort,Already Sorted,10000,64608,0.0247,O(n log n),Consistent - unaffected by input
+Bubble Sort,Reverse Sorted,100,4950,0.0009,O(n^2),Worst case - max swaps
+Insertion Sort,Reverse Sorted,100,4950,0.0008,O(n^2),Worst case - max shifts
+Merge Sort,Reverse Sorted,100,356,0.0002,O(n log n),Consistent - unaffected by input
+Bubble Sort,Reverse Sorted,500,124750,0.0242,O(n^2),Worst case - max swaps
+Insertion Sort,Reverse Sorted,500,124750,0.0198,O(n^2),Worst case - max shifts
+Merge Sort,Reverse Sorted,500,2272,0.0008,O(n log n),Consistent - unaffected by input
+Bubble Sort,Reverse Sorted,1000,499500,0.103,O(n^2),Worst case - max swaps
+Insertion Sort,Reverse Sorted,1000,499500,0.0828,O(n^2),Worst case - max shifts
+Merge Sort,Reverse Sorted,1000,5044,0.0018,O(n log n),Consistent - unaffected by input
+Bubble Sort,Reverse Sorted,2000,1999000,0.4296,O(n^2),Worst case - max swaps
+Insertion Sort,Reverse Sorted,2000,1999000,0.3413,O(n^2),Worst case - max shifts
+Merge Sort,Reverse Sorted,2000,11088,0.0038,O(n log n),Consistent - unaffected by input
+Bubble Sort,Reverse Sorted,5000,12497500,2.7096,O(n^2),Worst case - max swaps
+Insertion Sort,Reverse Sorted,5000,12497500,2.1327,O(n^2),Worst case - max shifts
+Merge Sort,Reverse Sorted,5000,32004,0.0102,O(n log n),Consistent - unaffected by input
+Bubble Sort,Reverse Sorted,10000,49995000,11.4386,O(n^2),Worst case - max swaps
+Insertion Sort,Reverse Sorted,10000,49995000,8.5529,O(n^2),Worst case - max shifts
+Merge Sort,Reverse Sorted,10000,69008,0.0216,O(n log n),Consistent - unaffected by input

@@ -1,0 +1,23 @@
+Algorithm,Size 1,Comparisons 1,Size 2,Comparisons 2,Size Growth (x),Comparisons Growth (x),Theoretical Complexity,Matches Theory?
+Linear Search,1000,901,5000,4501,5.00,5.00,O(n) - Linear,Yes
+Binary Search,1000,8,5000,9,5.00,1.12,O(log n) - Logarithmic,Yes
+Linear Search,5000,4501,10000,9001,2.00,2.00,O(n) - Linear,Yes
+Binary Search,5000,9,10000,13,2.00,1.44,O(log n) - Logarithmic,Close
+Linear Search,10000,9001,50000,45001,5.00,5.00,O(n) - Linear,Yes
+Binary Search,10000,13,50000,16,5.00,1.23,O(log n) - Logarithmic,Yes
+Linear Search,50000,45001,100000,90001,2.00,2.00,O(n) - Linear,Yes
+Binary Search,50000,16,100000,13,2.00,0.81,O(log n) - Logarithmic,Yes
+Linear Search,100000,90001,500000,450001,5.00,5.00,O(n) - Linear,Yes
+Binary Search,100000,13,500000,16,5.00,1.23,O(log n) - Logarithmic,Yes
+Linear Search,500000,450001,1000000,900001,2.00,2.00,O(n) - Linear,Yes
+Binary Search,500000,16,1000000,19,2.00,1.19,O(log n) - Logarithmic,Close
+Bubble Sort,100,4940,500,124474,5.00,25.20,O(n^2) - Quadratic,Yes
+Merge Sort,100,545,500,3831,5.00,7.03,O(n log n) - Linearithmic,Yes
+Bubble Sort,500,124474,1000,496872,2.00,3.99,O(n^2) - Quadratic,Yes
+Merge Sort,500,3831,1000,8735,2.00,2.28,O(n log n) - Linearithmic,Yes
+Bubble Sort,1000,496872,2000,1998370,2.00,4.02,O(n^2) - Quadratic,Yes
+Merge Sort,1000,8735,2000,19419,2.00,2.22,O(n log n) - Linearithmic,Yes
+Bubble Sort,2000,1998370,5000,12493930,2.50,6.25,O(n^2) - Quadratic,Yes
+Merge Sort,2000,19419,5000,55225,2.50,2.84,O(n log n) - Linearithmic,Yes
+Bubble Sort,5000,12493930,10000,49965354,2.00,4.00,O(n^2) - Quadratic,Yes
+Merge Sort,5000,55225,10000,120450,2.00,2.18,O(n log n) - Linearithmic,Yes

@@ -136,7 +136,11 @@ def merge(left: List[int], right: List[int]) -> Tuple[List[int], int]:
 
 
 def quick_sort(arr: List[int]) -> Tuple[List[int], int, int]:
-    """Quick Sort - O(n log n) average, O(n²) worst case"""
+    """Quick Sort - O(n log n) average, O(n²) worst case
+    
+    Menggunakan median-of-three pivot selection untuk menghindari
+    worst case pada data yang sudah terurut.
+    """
     if len(arr) <= 1:
         return arr, 0, 0
     
@@ -148,29 +152,93 @@ def quick_sort(arr: List[int]) -> Tuple[List[int], int, int]:
 
 def _quick_sort_helper(arr: List[int], low: int, high: int, 
                        comparisons: List[int], swaps: List[int]) -> None:
-    """Helper function untuk quick sort"""
-    if low < high:
+    """Helper function untuk quick sort dengan tail recursion optimization"""
+    while low < high:
+        # Switch to insertion sort for small subarrays (optimization)
+        if high - low < 10:
+            _insertion_sort_range(arr, low, high, comparisons, swaps)
+            break
+            
         pivot_idx = _partition(arr, low, high, comparisons, swaps)
-        _quick_sort_helper(arr, low, pivot_idx - 1, comparisons, swaps)
-        _quick_sort_helper(arr, pivot_idx + 1, high, comparisons, swaps)
+        
+        # Tail recursion optimization: recurse on smaller partition
+        if pivot_idx - low < high - pivot_idx:
+            _quick_sort_helper(arr, low, pivot_idx - 1, comparisons, swaps)
+            low = pivot_idx + 1
+        else:
+            _quick_sort_helper(arr, pivot_idx + 1, high, comparisons, swaps)
+            high = pivot_idx - 1
+
+
+def _insertion_sort_range(arr: List[int], low: int, high: int,
+                          comparisons: List[int], swaps: List[int]) -> None:
+    """Insertion sort untuk subarray kecil"""
+    for i in range(low + 1, high + 1):
+        key = arr[i]
+        j = i - 1
+        
+        while j >= low and arr[j] > key:
+            comparisons[0] += 1
+            arr[j + 1] = arr[j]
+            swaps[0] += 1
+            j -= 1
+        
+        if j >= low:
+            comparisons[0] += 1
+        
+        arr[j + 1] = key
+
+
+def _median_of_three(arr: List[int], low: int, high: int,
+                     comparisons: List[int], swaps: List[int]) -> int:
+    """Pilih pivot menggunakan median-of-three untuk menghindari worst case"""
+    mid = (low + high) // 2
+    
+    # Sort low, mid, high
+    comparisons[0] += 1
+    if arr[low] > arr[mid]:
+        arr[low], arr[mid] = arr[mid], arr[low]
+        swaps[0] += 1
+    
+    comparisons[0] += 1
+    if arr[mid] > arr[high]:
+        arr[mid], arr[high] = arr[high], arr[mid]
+        swaps[0] += 1
+        
+        comparisons[0] += 1
+        if arr[low] > arr[mid]:
+            arr[low], arr[mid] = arr[mid], arr[low]
+            swaps[0] += 1
+    
+    # Move median to high-1 position
+    arr[mid], arr[high - 1] = arr[high - 1], arr[mid]
+    swaps[0] += 1
+    
+    return high - 1
 
 
 def _partition(arr: List[int], low: int, high: int, 
                comparisons: List[int], swaps: List[int]) -> int:
-    """Partition function untuk quick sort"""
-    pivot = arr[high]
+    """Partition function dengan median-of-three pivot"""
+    # Use median-of-three for better pivot selection
+    if high - low >= 3:
+        pivot_idx = _median_of_three(arr, low, high, comparisons, swaps)
+        pivot = arr[pivot_idx]
+    else:
+        pivot = arr[high]
+    
     i = low - 1
     
     for j in range(low, high):
         comparisons[0] += 1
         if arr[j] <= pivot:
             i += 1
-            arr[i], arr[j] = arr[j], arr[i]
             if i != j:
+                arr[i], arr[j] = arr[j], arr[i]
                 swaps[0] += 1
     
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
     if i + 1 != high:
+        arr[i + 1], arr[high] = arr[high], arr[i + 1]
         swaps[0] += 1
     
     return i + 1

@@ -32,7 +32,7 @@ def plot_search_comparison():
     
     plt.tight_layout()
     plt.savefig('grafik_search_algorithms.png', dpi=300, bbox_inches='tight')
-    print("Saved: grafik_search_algorithms.png")
+    print("✓ Saved: grafik_search_algorithms.png")
     plt.close()
 
 
@@ -67,7 +67,7 @@ def plot_sorting_random():
     
     plt.tight_layout()
     plt.savefig('grafik_sorting_random.png', dpi=300, bbox_inches='tight')
-    print("Saved: grafik_sorting_random.png")
+    print("✓ Saved: grafik_sorting_random.png")
     plt.close()
 
 
@@ -140,7 +140,7 @@ def plot_best_vs_worst_case():
     
     plt.tight_layout()
     plt.savefig('grafik_best_vs_worst.png', dpi=300, bbox_inches='tight')
-    print("Saved: grafik_best_vs_worst.png")
+    print("✓ Saved: grafik_best_vs_worst.png")
     plt.close()
 
 
@@ -148,7 +148,7 @@ def plot_growth_rate_analysis():
     """Analisis growth rate untuk membuktikan Big-O"""
     df_search = pd.read_csv('results_search.csv')
     df_sort = pd.read_csv('results_sorting_sorting_random.csv')
-    fig, axes = plt.subplots(2, 3, figsize=(20, 12))
+    fig, axes = plt.subplots(2, 4, figsize=(24, 12))
     
     n_search = np.array(df_search['Input Size'])
     n_sort = np.array(df_sort['Input Size'])
@@ -181,11 +181,20 @@ def plot_growth_rate_analysis():
     axes[0, 2].grid(True, alpha=0.3)
     
     # Selection Sort
-    axes[1, 0].scatter(df_sort['Input Size'], df_sort['Selection Comparisons'], s=100, alpha=0.7, label='Actual', color='#e67e22', zorder=3)
-    axes[1, 0].plot(n_sort, (n_sort ** 2) / 2, '--', linewidth=2, label='Theoretical O(n²)', color='#34495e', alpha=0.7)
+    axes[0, 3].scatter(df_sort['Input Size'], df_sort['Selection Comparisons'], s=100, alpha=0.7, label='Actual', color='#e67e22', zorder=3)
+    axes[0, 3].plot(n_sort, (n_sort ** 2) / 2, '--', linewidth=2, label='Theoretical O(n²)', color='#34495e', alpha=0.7)
+    axes[0, 3].set_xlabel('Input Size (n)', fontsize=11, fontweight='bold')
+    axes[0, 3].set_ylabel('Comparisons', fontsize=11, fontweight='bold')
+    axes[0, 3].set_title('Selection Sort: O(n²)', fontsize=13, fontweight='bold')
+    axes[0, 3].legend(fontsize=10)
+    axes[0, 3].grid(True, alpha=0.3)
+    
+    # Insertion Sort
+    axes[1, 0].scatter(df_sort['Input Size'], df_sort['Insertion Comparisons'], s=100, alpha=0.7, label='Actual', color='#f39c12', zorder=3)
+    axes[1, 0].plot(n_sort, (n_sort ** 2) / 4, '--', linewidth=2, label='Theoretical O(n²)', color='#34495e', alpha=0.7)
     axes[1, 0].set_xlabel('Input Size (n)', fontsize=11, fontweight='bold')
     axes[1, 0].set_ylabel('Comparisons', fontsize=11, fontweight='bold')
-    axes[1, 0].set_title('Selection Sort: O(n²)', fontsize=13, fontweight='bold')
+    axes[1, 0].set_title('Insertion Sort: O(n²)', fontsize=13, fontweight='bold')
     axes[1, 0].legend(fontsize=10)
     axes[1, 0].grid(True, alpha=0.3)
     
@@ -207,9 +216,21 @@ def plot_growth_rate_analysis():
     axes[1, 2].legend(fontsize=10)
     axes[1, 2].grid(True, alpha=0.3)
     
+    # Complexity Comparison - All Algorithms
+    axes[1, 3].plot(n_search, n_search, '-', linewidth=2, label='Linear O(n)', color='#e74c3c', alpha=0.7)
+    axes[1, 3].plot(n_search, np.log2(n_search) * 100, '-', linewidth=2, label='Binary O(log n)', color='#27ae60', alpha=0.7)
+    axes[1, 3].plot(n_sort, (n_sort ** 2) / 1000, '-', linewidth=2, label='Bubble/Selection O(n²)', color='#e67e22', alpha=0.7)
+    axes[1, 3].plot(n_sort, n_sort * np.log2(n_sort) / 10, '-', linewidth=2, label='Merge/Quick O(n log n)', color='#3498db', alpha=0.7)
+    axes[1, 3].set_xlabel('Input Size (n)', fontsize=11, fontweight='bold')
+    axes[1, 3].set_ylabel('Operations (scaled)', fontsize=11, fontweight='bold')
+    axes[1, 3].set_title('Complexity Classes Comparison', fontsize=13, fontweight='bold')
+    axes[1, 3].legend(fontsize=9)
+    axes[1, 3].grid(True, alpha=0.3)
+    axes[1, 3].set_yscale('log')
+    
     plt.tight_layout()
     plt.savefig('grafik_growth_rate.png', dpi=300, bbox_inches='tight')
-    print("Saved: grafik_growth_rate.png")
+    print("✓ Saved: grafik_growth_rate.png")
     plt.close()
 
 
@@ -243,32 +264,51 @@ def plot_speedup_comparison():
     
     plt.tight_layout()
     plt.savefig('grafik_speedup.png', dpi=300, bbox_inches='tight')
-    print("Saved: grafik_speedup.png")
+    print("✓ Saved: grafik_speedup.png")
     plt.close()
 
 
 if __name__ == "__main__":
-    print("Generating visualizations...\n")
+    print("="*80)
+    print("GENERATING VISUALIZATIONS FOR 7 ALGORITHMS")
+    print("="*80)
+    print("\nSearching Algorithms (2):")
+    print("  1. Linear Search")
+    print("  2. Binary Search")
+    print("\nSorting - Simple (3):")
+    print("  3. Bubble Sort")
+    print("  4. Selection Sort")
+    print("  5. Insertion Sort")
+    print("\nSorting - Advanced (2):")
+    print("  6. Merge Sort")
+    print("  7. Quick Sort")
+    print("\n" + "="*80)
+    print("Processing...\n")
+    
     try:
         plot_search_comparison()
         plot_sorting_random()
         plot_best_vs_worst_case()
         plot_growth_rate_analysis()
         plot_speedup_comparison()
+        
         print("\n" + "="*80)
-        print("ALL VISUALIZATIONS COMPLETED!")
+        print("✓ ALL VISUALIZATIONS COMPLETED!")
         print("="*80)
         print("\nGenerated graphs:")
-        print("  1. grafik_search_algorithms.png")
-        print("  2. grafik_sorting_random.png")
-        print("  3. grafik_best_vs_worst.png")
-        print("  4. grafik_growth_rate.png")
-        print("  5. grafik_speedup.png")
-        print("\nAll graphs saved in high resolution (300 DPI)")
-        print("Ready for presentation!")
+        print("  1. grafik_search_algorithms.png       - Linear & Binary Search")
+        print("  2. grafik_sorting_random.png          - All 5 Sorting Algorithms")
+        print("  3. grafik_best_vs_worst.png           - Best vs Worst Case Analysis")
+        print("  4. grafik_growth_rate.png             - Big-O Growth Rate Proof")
+        print("  5. grafik_speedup.png                 - Performance Speedup")
+        print("\n✓ All graphs saved in high resolution (300 DPI)")
+        print("✓ Ready for presentation!")
         print("="*80)
+        
     except FileNotFoundError as e:
-        print(f"\nError: CSV file not found: {e}")
-        print("\nPlease run dataset-generator.py first.")
+        print(f"\n❌ Error: CSV file not found: {e}")
+        print("\n⚠️  Please run dataset-generator.py first.")
+        print("="*80)
     except Exception as e:
-        print(f"\nError: {e}")
+        print(f"\n❌ Error: {e}")
+        print("="*80)

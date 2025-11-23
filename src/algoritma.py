@@ -81,36 +81,29 @@ def insertion_sort(arr: List[int]) -> Tuple[List[int], int, int]:
     """Insertion Sort - O(n²)"""
     n = len(arr)
     comparisons, shifts = 0, 0
-    
     for i in range(1, n):
         key = arr[i]
         j = i - 1
-        
         while j >= 0 and arr[j] > key:
             comparisons += 1
             arr[j + 1] = arr[j]
             shifts += 1
             j -= 1
-        
         if j >= 0:
             comparisons += 1
-        
         arr[j + 1] = key
     
     return arr, comparisons, shifts
+    """Merge Sort - O(n log n)"""
 
 
 def merge_sort(arr: List[int]) -> Tuple[List[int], int]:
-    """Merge Sort - O(n log n)"""
     if len(arr) <= 1:
         return arr, 0
-    
     mid = len(arr) // 2
     left, left_comps = merge_sort(arr[:mid])
     right, right_comps = merge_sort(arr[mid:])
-    
     merged, merge_comps = merge(left, right)
-    
     return merged, left_comps + right_comps + merge_comps
 
 
@@ -119,7 +112,6 @@ def merge(left: List[int], right: List[int]) -> Tuple[List[int], int]:
     result = []
     comparisons = 0
     i = j = 0
-    
     while i < len(left) and j < len(right):
         comparisons += 1
         if left[i] <= right[j]:
@@ -128,40 +120,26 @@ def merge(left: List[int], right: List[int]) -> Tuple[List[int], int]:
         else:
             result.append(right[j])
             j += 1
-    
     result.extend(left[i:])
     result.extend(right[j:])
-    
     return result, comparisons
 
 
 def quick_sort(arr: List[int]) -> Tuple[List[int], int, int]:
-    """Quick Sort - O(n log n) average, O(n²) worst case
-    
-    Menggunakan median-of-three pivot selection untuk menghindari
-    worst case pada data yang sudah terurut.
-    """
     if len(arr) <= 1:
         return arr, 0, 0
-    
     comparisons, swaps = [0], [0]  # Use list untuk pass by reference
     _quick_sort_helper(arr, 0, len(arr) - 1, comparisons, swaps)
-    
     return arr, comparisons[0], swaps[0]
 
 
 def _quick_sort_helper(arr: List[int], low: int, high: int, 
                        comparisons: List[int], swaps: List[int]) -> None:
-    """Helper function untuk quick sort dengan tail recursion optimization"""
     while low < high:
-        # Switch to insertion sort for small subarrays (optimization)
         if high - low < 10:
             _insertion_sort_range(arr, low, high, comparisons, swaps)
             break
-            
         pivot_idx = _partition(arr, low, high, comparisons, swaps)
-        
-        # Tail recursion optimization: recurse on smaller partition
         if pivot_idx - low < high - pivot_idx:
             _quick_sort_helper(arr, low, pivot_idx - 1, comparisons, swaps)
             low = pivot_idx + 1

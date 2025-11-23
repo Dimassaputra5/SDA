@@ -32,7 +32,7 @@ def plot_search_comparison():
     
     plt.tight_layout()
     plt.savefig('grafik_search_algorithms.png', dpi=300, bbox_inches='tight')
-    print("✓ Saved: grafik_search_algorithms.png")
+    print("Saved: grafik_search_algorithms.png")
     plt.close()
 
 
@@ -67,7 +67,7 @@ def plot_sorting_random():
     
     plt.tight_layout()
     plt.savefig('grafik_sorting_random.png', dpi=300, bbox_inches='tight')
-    print("✓ Saved: grafik_sorting_random.png")
+    print("Saved: grafik_sorting_random.png")
     plt.close()
 
 
@@ -140,7 +140,7 @@ def plot_best_vs_worst_case():
     
     plt.tight_layout()
     plt.savefig('grafik_best_vs_worst.png', dpi=300, bbox_inches='tight')
-    print("✓ Saved: grafik_best_vs_worst.png")
+    print("Saved: grafik_best_vs_worst.png")
     plt.close()
 
 
@@ -230,7 +230,7 @@ def plot_growth_rate_analysis():
     
     plt.tight_layout()
     plt.savefig('grafik_growth_rate.png', dpi=300, bbox_inches='tight')
-    print("✓ Saved: grafik_growth_rate.png")
+    print("Saved: grafik_growth_rate.png")
     plt.close()
 
 
@@ -264,7 +264,7 @@ def plot_speedup_comparison():
     
     plt.tight_layout()
     plt.savefig('grafik_speedup.png', dpi=300, bbox_inches='tight')
-    print("✓ Saved: grafik_speedup.png")
+    print("Saved: grafik_speedup.png")
     plt.close()
 
 
@@ -293,7 +293,7 @@ if __name__ == "__main__":
         plot_speedup_comparison()
         
         print("\n" + "="*80)
-        print("✓ ALL VISUALIZATIONS COMPLETED!")
+        print("ALL VISUALIZATIONS COMPLETED!")
         print("="*80)
         print("\nGenerated graphs:")
         print("  1. grafik_search_algorithms.png       - Linear & Binary Search")
@@ -301,8 +301,8 @@ if __name__ == "__main__":
         print("  3. grafik_best_vs_worst.png           - Best vs Worst Case Analysis")
         print("  4. grafik_growth_rate.png             - Big-O Growth Rate Proof")
         print("  5. grafik_speedup.png                 - Performance Speedup")
-        print("\n✓ All graphs saved in high resolution (300 DPI)")
-        print("✓ Ready for presentation!")
+        print("\nAll graphs saved in high resolution (300 DPI)")
+        print("Ready for presentation!")
         print("="*80)
         
     except FileNotFoundError as e:

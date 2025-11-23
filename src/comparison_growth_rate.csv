@@ -1,0 +1,39 @@
+Algorithm,Size 1,Comparisons 1,Size 2,Comparisons 2,Size Growth (x),Comparisons Growth (x),Theoretical Complexity,Matches Theory?
+Linear Search,1000,901,5000,4501,5.00,5.00,O(n),Yes
+Binary Search,1000,10,5000,9,5.00,0.90,O(log n),Yes
+Linear Search,5000,4501,10000,9000,2.00,2.00,O(n),Yes
+Binary Search,5000,9,10000,12,2.00,1.33,O(log n),Close
+Linear Search,10000,9000,50000,45001,5.00,5.00,O(n),Yes
+Binary Search,10000,12,50000,16,5.00,1.33,O(log n),Yes
+Linear Search,50000,45001,100000,90000,2.00,2.00,O(n),Yes
+Binary Search,50000,16,100000,13,2.00,0.81,O(log n),Yes
+Linear Search,100000,90000,500000,450001,5.00,5.00,O(n),Yes
+Binary Search,100000,13,500000,18,5.00,1.38,O(log n),Yes
+Linear Search,500000,450001,1000000,900001,2.00,2.00,O(n),Yes
+Binary Search,500000,18,1000000,19,2.00,1.06,O(log n),Close
+Linear Search,1000000,900001,2000000,1800001,2.00,2.00,O(n),Yes
+Binary Search,1000000,19,2000000,21,2.00,1.11,O(log n),Close
+Bubble Sort,100,4929,500,124714,5.00,25.30,O(n^2),Yes
+Selection Sort,100,4950,500,124750,5.00,25.20,O(n^2),Yes
+Merge Sort,100,546,500,3857,5.00,7.06,O(n log n),Yes
+Quick Sort,100,613,500,4546,5.00,7.42,O(n log n),Yes
+Bubble Sort,500,124714,1000,499434,2.00,4.00,O(n^2),Yes
+Selection Sort,500,124750,1000,499500,2.00,4.00,O(n^2),Yes
+Merge Sort,500,3857,1000,8706,2.00,2.26,O(n log n),Yes
+Quick Sort,500,4546,1000,10438,2.00,2.30,O(n log n),Yes
+Bubble Sort,1000,499434,2000,1998097,2.00,4.00,O(n^2),Yes
+Selection Sort,1000,499500,2000,1999000,2.00,4.00,O(n^2),Yes
+Merge Sort,1000,8706,2000,19429,2.00,2.23,O(n log n),Yes
+Quick Sort,1000,10438,2000,23106,2.00,2.21,O(n log n),Yes
+Bubble Sort,2000,1998097,5000,12497149,2.50,6.25,O(n^2),Yes
+Selection Sort,2000,1999000,5000,12497500,2.50,6.25,O(n^2),Yes
+Merge Sort,2000,19429,5000,55171,2.50,2.84,O(n log n),Yes
+Quick Sort,2000,23106,5000,67970,2.50,2.94,O(n log n),Yes
+Bubble Sort,5000,12497149,10000,49991597,2.00,4.00,O(n^2),Yes
+Selection Sort,5000,12497500,10000,49995000,2.00,4.00,O(n^2),Yes
+Merge Sort,5000,55171,10000,120405,2.00,2.18,O(n log n),Yes
+Quick Sort,5000,67970,10000,154845,2.00,2.28,O(n log n),Yes
+Bubble Sort,10000,49991597,20000,199980820,2.00,4.00,O(n^2),Yes
+Selection Sort,10000,49995000,20000,199990000,2.00,4.00,O(n^2),Yes
+Merge Sort,10000,120405,20000,260866,2.00,2.17,O(n log n),Yes
+Quick Sort,10000,154845,20000,434371,2.00,2.81,O(n log n),Yes

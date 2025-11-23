@@ -1,0 +1,122 @@
+Algorithm,Data Type,Input Size (n),Comparisons,Time (seconds),Complexity Class,Notes
+Linear Search,Sorted,1000,901,0.000147,O(n),Target at 90%
+Binary Search,Sorted,1000,10,1e-05,O(log n),Target at 90%
+Linear Search,Sorted,5000,4501,0.000735,O(n),Target at 90%
+Binary Search,Sorted,5000,9,9e-06,O(log n),Target at 90%
+Linear Search,Sorted,10000,9000,0.001062,O(n),Target at 90%
+Binary Search,Sorted,10000,12,4e-06,O(log n),Target at 90%
+Linear Search,Sorted,50000,45001,0.007934,O(n),Target at 90%
+Binary Search,Sorted,50000,16,9e-06,O(log n),Target at 90%
+Linear Search,Sorted,100000,90000,0.01617,O(n),Target at 90%
+Binary Search,Sorted,100000,13,9e-06,O(log n),Target at 90%
+Linear Search,Sorted,500000,450001,0.088653,O(n),Target at 90%
+Binary Search,Sorted,500000,18,1e-05,O(log n),Target at 90%
+Linear Search,Sorted,1000000,900001,0.178626,O(n),Target at 90%
+Binary Search,Sorted,1000000,19,1.1e-05,O(log n),Target at 90%
+Linear Search,Sorted,2000000,1800001,0.376893,O(n),Target at 90%
+Binary Search,Sorted,2000000,21,1.6e-05,O(log n),Target at 90%
+Bubble Sort,Random,100,4929,0.0012,O(n^2),Average case
+Selection Sort,Random,100,4950,0.0005,O(n^2),Average case
+Insertion Sort,Random,100,2689,0.0006,O(n^2),Average case
+Merge Sort,Random,100,546,0.0002,O(n log n),Consistent
+Quick Sort,Random,100,613,0.0002,O(n log n),Average case
+Bubble Sort,Random,500,124714,0.0195,O(n^2),Average case
+Selection Sort,Random,500,124750,0.0108,O(n^2),Average case
+Insertion Sort,Random,500,63255,0.0108,O(n^2),Average case
+Merge Sort,Random,500,3857,0.0012,O(n log n),Consistent
+Quick Sort,Random,500,4546,0.001,O(n log n),Average case
+Bubble Sort,Random,1000,499434,0.0824,O(n^2),Average case
+Selection Sort,Random,1000,499500,0.0442,O(n^2),Average case
+Insertion Sort,Random,1000,255485,0.0445,O(n^2),Average case
+Merge Sort,Random,1000,8706,0.0027,O(n log n),Consistent
+Quick Sort,Random,1000,10438,0.0023,O(n log n),Average case
+Bubble Sort,Random,2000,1998097,0.3429,O(n^2),Average case
+Selection Sort,Random,2000,1999000,0.1885,O(n^2),Average case
+Insertion Sort,Random,2000,1014231,0.1829,O(n^2),Average case
+Merge Sort,Random,2000,19429,0.0055,O(n log n),Consistent
+Quick Sort,Random,2000,23106,0.005,O(n log n),Average case
+Bubble Sort,Random,5000,12497149,2.1196,O(n^2),Average case
+Selection Sort,Random,5000,12497500,1.0425,O(n^2),Average case
+Insertion Sort,Random,5000,6133630,1.0874,O(n^2),Average case
+Merge Sort,Random,5000,55171,0.0151,O(n log n),Consistent
+Quick Sort,Random,5000,67970,0.0137,O(n log n),Average case
+Bubble Sort,Random,10000,49991597,8.6584,O(n^2),Average case
+Selection Sort,Random,10000,49995000,4.1551,O(n^2),Average case
+Insertion Sort,Random,10000,25020914,4.7194,O(n^2),Average case
+Merge Sort,Random,10000,120405,0.0332,O(n log n),Consistent
+Quick Sort,Random,10000,154845,0.0322,O(n log n),Average case
+Bubble Sort,Random,20000,199980820,35.6272,O(n^2),Average case
+Selection Sort,Random,20000,199990000,16.6986,O(n^2),Average case
+Insertion Sort,Random,20000,99863290,17.9197,O(n^2),Average case
+Merge Sort,Random,20000,260866,0.0706,O(n log n),Consistent
+Quick Sort,Random,20000,434371,0.0912,O(n log n),Average case
+Bubble Sort,Sorted,100,99,0.0,O(n),Best case
+Selection Sort,Sorted,100,4950,0.0004,O(n^2),No benefit
+Insertion Sort,Sorted,100,99,0.0,O(n),Best case
+Merge Sort,Sorted,100,316,0.0001,O(n log n),Consistent
+Quick Sort,Sorted,100,666,0.0001,O(n log n),Good case
+Bubble Sort,Sorted,500,499,0.0001,O(n),Best case
+Selection Sort,Sorted,500,124750,0.0109,O(n^2),No benefit
+Insertion Sort,Sorted,500,499,0.0001,O(n),Best case
+Merge Sort,Sorted,500,2216,0.0014,O(n log n),Consistent
+Quick Sort,Sorted,500,7014,0.0013,O(n log n),Good case
+Bubble Sort,Sorted,1000,999,0.0001,O(n),Best case
+Selection Sort,Sorted,1000,499500,0.0432,O(n^2),No benefit
+Insertion Sort,Sorted,1000,999,0.0002,O(n),Best case
+Merge Sort,Sorted,1000,4932,0.002,O(n log n),Consistent
+Quick Sort,Sorted,1000,19313,0.0027,O(n log n),Good case
+Bubble Sort,Sorted,2000,1999,0.0002,O(n),Best case
+Selection Sort,Sorted,2000,1999000,0.1705,O(n^2),No benefit
+Insertion Sort,Sorted,2000,1999,0.0004,O(n),Best case
+Merge Sort,Sorted,2000,10864,0.0044,O(n log n),Consistent
+Quick Sort,Sorted,2000,56392,0.008,O(n log n),Good case
+Bubble Sort,Sorted,5000,4999,0.0007,O(n),Best case
+Selection Sort,Sorted,5000,12497500,1.043,O(n^2),No benefit
+Insertion Sort,Sorted,5000,4999,0.001,O(n),Best case
+Merge Sort,Sorted,5000,29804,0.0101,O(n log n),Consistent
+Quick Sort,Sorted,5000,218704,0.0275,O(n log n),Good case
+Bubble Sort,Sorted,10000,9999,0.0011,O(n),Best case
+Selection Sort,Sorted,10000,49995000,4.1755,O(n^2),No benefit
+Insertion Sort,Sorted,10000,9999,0.0023,O(n),Best case
+Merge Sort,Sorted,10000,64608,0.0256,O(n log n),Consistent
+Quick Sort,Sorted,10000,626982,0.0771,O(n log n),Good case
+Bubble Sort,Sorted,20000,19999,0.0022,O(n),Best case
+Selection Sort,Sorted,20000,199990000,16.4883,O(n^2),No benefit
+Insertion Sort,Sorted,20000,19999,0.004,O(n),Best case
+Merge Sort,Sorted,20000,139216,0.0455,O(n log n),Consistent
+Quick Sort,Sorted,20000,1770777,0.209,O(n log n),Good case
+Bubble Sort,Reverse,100,4950,0.001,O(n^2),Worst case
+Selection Sort,Reverse,100,4950,0.0004,O(n^2),Same as avg
+Insertion Sort,Reverse,100,4950,0.0008,O(n^2),Worst case
+Merge Sort,Reverse,100,356,0.0002,O(n log n),Consistent
+Quick Sort,Reverse,100,663,0.0001,O(n^2),Can be worst
+Bubble Sort,Reverse,500,124750,0.0248,O(n^2),Worst case
+Selection Sort,Reverse,500,124750,0.0117,O(n^2),Same as avg
+Insertion Sort,Reverse,500,124750,0.0243,O(n^2),Worst case
+Merge Sort,Reverse,500,2272,0.0012,O(n log n),Consistent
+Quick Sort,Reverse,500,5147,0.0011,O(n^2),Can be worst
+Bubble Sort,Reverse,1000,499500,0.1225,O(n^2),Worst case
+Selection Sort,Reverse,1000,499500,0.0537,O(n^2),Same as avg
+Insertion Sort,Reverse,1000,499500,0.0839,O(n^2),Worst case
+Merge Sort,Reverse,1000,5044,0.0022,O(n log n),Consistent
+Quick Sort,Reverse,1000,12030,0.003,O(n^2),Can be worst
+Bubble Sort,Reverse,2000,1999000,0.443,O(n^2),Worst case
+Selection Sort,Reverse,2000,1999000,0.1764,O(n^2),Same as avg
+Insertion Sort,Reverse,2000,1999000,0.3834,O(n^2),Worst case
+Merge Sort,Reverse,2000,11088,0.0039,O(n log n),Consistent
+Quick Sort,Reverse,2000,26962,0.0061,O(n^2),Can be worst
+Bubble Sort,Reverse,5000,12497500,2.7464,O(n^2),Worst case
+Selection Sort,Reverse,5000,12497500,1.0675,O(n^2),Same as avg
+Insertion Sort,Reverse,5000,12497500,2.1756,O(n^2),Worst case
+Merge Sort,Reverse,5000,32004,0.0107,O(n log n),Consistent
+Quick Sort,Reverse,5000,80308,0.017,O(n^2),Can be worst
+Bubble Sort,Reverse,10000,49995000,11.1697,O(n^2),Worst case
+Selection Sort,Reverse,10000,49995000,4.3986,O(n^2),Same as avg
+Insertion Sort,Reverse,10000,49995000,8.7742,O(n^2),Worst case
+Merge Sort,Reverse,10000,69008,0.0223,O(n log n),Consistent
+Quick Sort,Reverse,10000,176715,0.0362,O(n^2),Can be worst
+Bubble Sort,Reverse,20000,199990000,44.5884,O(n^2),Worst case
+Selection Sort,Reverse,20000,199990000,17.0163,O(n^2),Same as avg
+Insertion Sort,Reverse,20000,199990000,34.8765,O(n^2),Worst case
+Merge Sort,Reverse,20000,148016,0.0468,O(n log n),Consistent
+Quick Sort,Reverse,20000,389649,0.0807,O(n^2),Can be worst

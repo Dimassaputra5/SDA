@@ -1,0 +1,16 @@
+Category,Input Size (n),Fastest Algorithm,Time (sec),Slowest Algorithm,Time (sec),Speed Difference (x)
+Search,1000,Binary Search,0.000010,Linear Search,0.000147,14.70
+Search,5000,Binary Search,0.000009,Linear Search,0.000735,81.67
+Search,10000,Binary Search,0.000004,Linear Search,0.001062,265.50
+Search,50000,Binary Search,0.000009,Linear Search,0.007934,881.56
+Search,100000,Binary Search,0.000009,Linear Search,0.016170,1796.67
+Search,500000,Binary Search,0.000010,Linear Search,0.088653,8865.30
+Search,1000000,Binary Search,0.000011,Linear Search,0.178626,16238.73
+Search,2000000,Binary Search,0.000016,Linear Search,0.376893,23555.81
+Sorting (Random),100,Merge Sort,0.000200,Bubble Sort,0.001200,6.00
+Sorting (Random),500,Quick Sort,0.001000,Bubble Sort,0.019500,19.50
+Sorting (Random),1000,Quick Sort,0.002300,Bubble Sort,0.082400,35.83
+Sorting (Random),2000,Quick Sort,0.005000,Bubble Sort,0.342900,68.58
+Sorting (Random),5000,Quick Sort,0.013700,Bubble Sort,2.119600,154.72
+Sorting (Random),10000,Quick Sort,0.032200,Bubble Sort,8.658400,268.89
+Sorting (Random),20000,Merge Sort,0.070600,Bubble Sort,35.627200,504.63

@@ -3,7 +3,7 @@ DATASET GENERATOR & COMPREHENSIVE TESTING
 
 Script ini akan:
 1. Generate datasets dalam berbagai ukuran
-2. Test 5 algoritma (Linear, Binary, Bubble, Insertion, Merge)
+2. Test 7 algoritma (Linear, Binary, Bubble, Selection, Insertion, Merge, Quick)
 3. Export hasil ke CSV
 4. Siap untuk visualisasi
 """
@@ -16,9 +16,12 @@ from algoritma import (
     linear_search,
     binary_search,
     bubble_sort,
+    selection_sort,
     insertion_sort,
-    merge_sort
+    merge_sort,
+    quick_sort
 )
+
 def generate_all_datasets():
     """Generate semua dataset yang diperlukan"""
     
@@ -156,6 +159,15 @@ def test_sorting_algorithms(datasets, dataset_type):
         result['bubble_time'] = b_time
         print(f"  Bubble:    {b_comps:>10,} comps, {b_time:>8.4f} sec")
         
+        # Selection Sort
+        arr = base_arr.copy()
+        start = time.perf_counter()
+        _, s_comps, s_swaps = selection_sort(arr)
+        s_time = time.perf_counter() - start
+        result['selection_comps'] = s_comps
+        result['selection_time'] = s_time
+        print(f"  Selection: {s_comps:>10,} comps, {s_time:>8.4f} sec")
+        
         # Insertion Sort
         arr = base_arr.copy()
         start = time.perf_counter()
@@ -174,6 +186,15 @@ def test_sorting_algorithms(datasets, dataset_type):
         result['merge_time'] = m_time
         print(f"  Merge:     {m_comps:>10,} comps, {m_time:>8.4f} sec")
         
+        # Quick Sort
+        arr = base_arr.copy()
+        start = time.perf_counter()
+        _, q_comps, q_swaps = quick_sort(arr)
+        q_time = time.perf_counter() - start
+        result['quick_comps'] = q_comps
+        result['quick_time'] = q_time
+        print(f"  Quick:     {q_comps:>10,} comps, {q_time:>8.4f} sec")
+        
         results.append(result)
     
     # Export to CSV
@@ -182,18 +203,24 @@ def test_sorting_algorithms(datasets, dataset_type):
         writer = csv.writer(f)
         writer.writerow(['Input Size', 
                         'Bubble Comparisons', 'Bubble Time (sec)',
+                        'Selection Comparisons', 'Selection Time (sec)',
                         'Insertion Comparisons', 'Insertion Time (sec)',
-                        'Merge Comparisons', 'Merge Time (sec)'])
+                        'Merge Comparisons', 'Merge Time (sec)',
+                        'Quick Comparisons', 'Quick Time (sec)'])
         
         for r in results:
             writer.writerow([
                 r['size'],
                 r['bubble_comps'],
                 f"{r['bubble_time']:.4f}",
+                r['selection_comps'],
+                f"{r['selection_time']:.4f}",
                 r['insertion_comps'],
                 f"{r['insertion_time']:.4f}",
                 r['merge_comps'],
-                f"{r['merge_time']:.4f}"
+                f"{r['merge_time']:.4f}",
+                r['quick_comps'],
+                f"{r['quick_time']:.4f}"
             ])
     
     print(f"\n Results exported to: {filename}")

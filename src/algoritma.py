@@ -2,7 +2,8 @@
 ANALISIS KOMPLEKSITAS ALGORITMA
 Implementasi lengkap:
 - Search: Linear Search, Binary Search
-- Sort: Bubble Sort, Insertion Sort, Merge Sort
+- Sort Simple: Bubble Sort, Selection Sort, Insertion Sort
+- Sort Advanced: Merge Sort, Quick Sort
 """
 import time
 import random
@@ -53,6 +54,25 @@ def bubble_sort(arr: List[int]) -> Tuple[List[int], int, int]:
         
         if not swapped:
             break
+    
+    return arr, comparisons, swaps
+
+
+def selection_sort(arr: List[int]) -> Tuple[List[int], int, int]:
+    """Selection Sort - O(n²)"""
+    n = len(arr)
+    comparisons, swaps = 0, 0
+    
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            comparisons += 1
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        
+        if min_idx != i:
+            arr[i], arr[min_idx] = arr[min_idx], arr[i]
+            swaps += 1
     
     return arr, comparisons, swaps
 
@@ -115,6 +135,46 @@ def merge(left: List[int], right: List[int]) -> Tuple[List[int], int]:
     return result, comparisons
 
 
+def quick_sort(arr: List[int]) -> Tuple[List[int], int, int]:
+    """Quick Sort - O(n log n) average, O(n²) worst case"""
+    if len(arr) <= 1:
+        return arr, 0, 0
+    
+    comparisons, swaps = [0], [0]  # Use list untuk pass by reference
+    _quick_sort_helper(arr, 0, len(arr) - 1, comparisons, swaps)
+    
+    return arr, comparisons[0], swaps[0]
+
+
+def _quick_sort_helper(arr: List[int], low: int, high: int, 
+                       comparisons: List[int], swaps: List[int]) -> None:
+    """Helper function untuk quick sort"""
+    if low < high:
+        pivot_idx = _partition(arr, low, high, comparisons, swaps)
+        _quick_sort_helper(arr, low, pivot_idx - 1, comparisons, swaps)
+        _quick_sort_helper(arr, pivot_idx + 1, high, comparisons, swaps)
+
+
+def _partition(arr: List[int], low: int, high: int, 
+               comparisons: List[int], swaps: List[int]) -> int:
+    """Partition function untuk quick sort"""
+    pivot = arr[high]
+    i = low - 1
+    
+    for j in range(low, high):
+        comparisons[0] += 1
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+            if i != j:
+                swaps[0] += 1
+    
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    if i + 1 != high:
+        swaps[0] += 1
+    
+    return i + 1
+
 
 def compare_search_algorithms(arr_size: int = 1000, num_tests: int = 5):
     """
@@ -166,7 +226,7 @@ def compare_search_algorithms(arr_size: int = 1000, num_tests: int = 5):
 
 def compare_sorting_algorithms(arr_size: int = 1000, num_tests: int = 3):
     """
-    Bandingkan performa Bubble, Insertion, dan Merge Sort
+    Bandingkan performa semua sorting algorithms
     """
     print("\n" + "=" * 70)
     print(f"SORTING ALGORITHMS COMPARISON (Array Size: {arr_size})")
@@ -174,13 +234,16 @@ def compare_sorting_algorithms(arr_size: int = 1000, num_tests: int = 3):
     
     results = {
         'bubble': {'comparisons': [], 'times': []},
+        'selection': {'comparisons': [], 'times': []},
         'insertion': {'comparisons': [], 'times': []},
-        'merge': {'comparisons': [], 'times': []}
+        'merge': {'comparisons': [], 'times': []},
+        'quick': {'comparisons': [], 'times': []}
     }
     
     for test_num in range(num_tests):
         arr = [random.randint(1, 1000) for _ in range(arr_size)]
         
+        # Bubble Sort
         test_arr = arr.copy()
         start = time.perf_counter()
         _, comps, _ = bubble_sort(test_arr)
@@ -188,6 +251,15 @@ def compare_sorting_algorithms(arr_size: int = 1000, num_tests: int = 3):
         results['bubble']['comparisons'].append(comps)
         results['bubble']['times'].append(elapsed * 1000)
         
+        # Selection Sort
+        test_arr = arr.copy()
+        start = time.perf_counter()
+        _, comps, _ = selection_sort(test_arr)
+        elapsed = time.perf_counter() - start
+        results['selection']['comparisons'].append(comps)
+        results['selection']['times'].append(elapsed * 1000)
+        
+        # Insertion Sort
         test_arr = arr.copy()
         start = time.perf_counter()
         _, comps, _ = insertion_sort(test_arr)
@@ -195,31 +267,46 @@ def compare_sorting_algorithms(arr_size: int = 1000, num_tests: int = 3):
         results['insertion']['comparisons'].append(comps)
         results['insertion']['times'].append(elapsed * 1000)
         
+        # Merge Sort
         test_arr = arr.copy()
         start = time.perf_counter()
         _, comps = merge_sort(test_arr)
         elapsed = time.perf_counter() - start
         results['merge']['comparisons'].append(comps)
         results['merge']['times'].append(elapsed * 1000)
+        
+        # Quick Sort
+        test_arr = arr.copy()
+        start = time.perf_counter()
+        _, comps, _ = quick_sort(test_arr)
+        elapsed = time.perf_counter() - start
+        results['quick']['comparisons'].append(comps)
+        results['quick']['times'].append(elapsed * 1000)
     
-    for algo in ['bubble', 'insertion', 'merge']:
+    complexity = {
+        'bubble': 'O(n²)',
+        'selection': 'O(n²)',
+        'insertion': 'O(n²)',
+        'merge': 'O(n log n)',
+        'quick': 'O(n log n) avg'
+    }
+    
+    for algo in ['bubble', 'selection', 'insertion', 'merge', 'quick']:
         avg_comps = sum(results[algo]['comparisons']) / num_tests
         avg_time = sum(results[algo]['times']) / num_tests
-        
-        complexity = {
-            'bubble': 'O(n²)',
-            'insertion': 'O(n²)',
-            'merge': 'O(n log n)'
-        }
         
         print(f"\n{algo.capitalize()} Sort ({complexity[algo]}):")
         print(f"  Average Comparisons: {avg_comps:,.0f}")
         print(f"  Average Time: {avg_time:.2f} ms")
     
     # Calculate speedups relative to merge sort
-    bubble_speedup = sum(results['bubble']['times']) / sum(results['merge']['times'])
-    insertion_speedup = sum(results['insertion']['times']) / sum(results['merge']['times'])
+    merge_avg_time = sum(results['merge']['times']) / num_tests
     
-    print(f"\nSpeedup (Merge Sort vs others):")
-    print(f"  vs Bubble: {bubble_speedup:.2f}x faster")
-    print(f"  vs Insertion: {insertion_speedup:.2f}x faster")
+    print(f"\nSpeedup (vs Merge Sort):")
+    for algo in ['bubble', 'selection', 'insertion', 'quick']:
+        avg_time = sum(results[algo]['times']) / num_tests
+        speedup = avg_time / merge_avg_time
+        if speedup > 1:
+            print(f"  {algo.capitalize()}: {speedup:.2f}x slower")
+        else:
+            print(f"  {algo.capitalize()}: {1/speedup:.2f}x faster")

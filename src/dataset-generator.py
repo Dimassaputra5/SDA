@@ -37,7 +37,7 @@ def generate_all_datasets():
     }
     
     # Dataset untuk search (bisa lebih besar)
-    search_sizes = [1000, 5000, 10000, 50000, 100000, 500000, 1000000]
+    search_sizes = [1000, 5000, 10000, 50000, 100000, 500000, 1000000, 2000000]
     
     print("\n1. Generating SEARCH datasets...")
     for size in search_sizes:
@@ -48,7 +48,7 @@ def generate_all_datasets():
         print("berhasil")
     
     # Dataset untuk sorting
-    sorting_sizes = [100, 500, 1000, 2000, 5000, 10000]
+    sorting_sizes = [100, 500, 1000, 2000, 5000, 10000, 20000]
     
     print("\n2. Generating SORTING datasets (Random)...")
     for size in sorting_sizes:

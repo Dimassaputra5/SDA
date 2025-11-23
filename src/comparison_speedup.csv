@@ -7,10 +7,17 @@ Search Algorithms,100000,Linear Search,0.016170,Binary Search,0.000009,1796.67,9
 Search Algorithms,500000,Linear Search,0.088653,Binary Search,0.000010,8865.30,100.00
 Search Algorithms,1000000,Linear Search,0.178626,Binary Search,0.000011,16238.73,100.00
 Search Algorithms,2000000,Linear Search,0.376893,Binary Search,0.000016,23555.81,100.00
-Sorting (Random),100,Bubble Sort,0.001200,Quick Sort,0.000200,6.00,87.56
-Sorting (Random),500,Bubble Sort,0.019500,Quick Sort,0.001000,19.50,96.35
-Sorting (Random),1000,Bubble Sort,0.082400,Quick Sort,0.002300,35.83,97.91
-Sorting (Random),2000,Bubble Sort,0.342900,Quick Sort,0.005000,68.58,98.84
-Sorting (Random),5000,Bubble Sort,2.119600,Quick Sort,0.013700,154.72,99.46
-Sorting (Random),10000,Bubble Sort,8.658400,Quick Sort,0.032200,268.89,99.69
-Sorting (Random),20000,Bubble Sort,35.627200,Quick Sort,0.091200,390.65,99.78
+Sorting O(n^2) vs O(n log n),100,Bubble Sort,0.001200,Quick Sort,0.000200,6.00,87.56
+Sorting O(n^2) vs O(n log n),500,Bubble Sort,0.019500,Quick Sort,0.001000,19.50,96.35
+Sorting O(n^2) vs O(n log n),1000,Bubble Sort,0.082400,Quick Sort,0.002300,35.83,97.91
+Sorting O(n^2) vs O(n log n),2000,Bubble Sort,0.342900,Quick Sort,0.005000,68.58,98.84
+Sorting O(n^2) vs O(n log n),5000,Bubble Sort,2.119600,Quick Sort,0.013700,154.72,99.46
+Sorting O(n^2) vs O(n log n),10000,Bubble Sort,8.658400,Quick Sort,0.032200,268.89,99.69
+Sorting O(n^2) vs O(n log n),20000,Bubble Sort,35.627200,Quick Sort,0.091200,390.65,99.78
+Simple vs Advanced Sort,100,Bubble Sort,0.001200,Merge Sort,0.000200,6.00,N/A
+Simple vs Advanced Sort,500,Bubble Sort,0.019500,Merge Sort,0.001200,16.25,N/A
+Simple vs Advanced Sort,1000,Bubble Sort,0.082400,Merge Sort,0.002700,30.52,N/A
+Simple vs Advanced Sort,2000,Bubble Sort,0.342900,Merge Sort,0.005500,62.35,N/A
+Simple vs Advanced Sort,5000,Bubble Sort,2.119600,Merge Sort,0.015100,140.37,N/A
+Simple vs Advanced Sort,10000,Bubble Sort,8.658400,Merge Sort,0.033200,260.80,N/A
+Simple vs Advanced Sort,20000,Bubble Sort,35.627200,Merge Sort,0.070600,504.63,N/A

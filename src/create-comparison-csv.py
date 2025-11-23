@@ -47,7 +47,7 @@ def create_comprehensive_comparison():
     df_sorted = pd.read_csv('results_sorting_sorting_sorted.csv')
     df_reverse = pd.read_csv('results_sorting_sorting_reverse.csv')
     
-    print("\n✓ Data loaded successfully")
+    print("\n Data loaded successfully")
     print(f"  - Search tests: {len(df_search)} size variations")
     print(f"  - Sorting tests: {len(df_random)} size variations x 3 data types")
     
@@ -90,7 +90,7 @@ def create_comprehensive_comparison():
             writer.writerow(['Merge Sort', 'Reverse Sorted', size, int(row['Merge Comparisons']), float(row['Merge Time (sec)']), 'O(n log n)', 'Consistent performance'])
             writer.writerow(['Quick Sort', 'Reverse Sorted', size, int(row['Quick Comparisons']), float(row['Quick Time (sec)']), 'O(n log n)', 'Handled by median pivot'])
     
-    print("   ✓ Created: comparison_all_algorithms.csv")
+    print("   Created: comparison_all_algorithms.csv")
     
     # CSV 2: SUMMARY COMPARISON
     print("\n2. Creating comparison_summary.csv...")
@@ -121,7 +121,7 @@ def create_comprehensive_comparison():
             speedup = times[slowest] / times[fastest]
             writer.writerow(['Sorting (Random)', size, fastest, f"{times[fastest]:.6f}", slowest, f"{times[slowest]:.6f}", f"{speedup:.2f}"])
     
-    print("   ✓ Created: comparison_summary.csv")
+    print("   Created: comparison_summary.csv")
     
     # CSV 3: SPEEDUP ANALYSIS
     print("\n3. Creating comparison_speedup.csv...")
@@ -159,7 +159,7 @@ def create_comprehensive_comparison():
             speedup = bubble_time / merge_time if merge_time > 0 else 0
             writer.writerow(['Simple vs Advanced Sort', size, 'Bubble Sort', f"{bubble_time:.6f}", 'Merge Sort', f"{merge_time:.6f}", f"{speedup:.2f}", 'N/A'])
     
-    print("   ✓ Created: comparison_speedup.csv")
+    print("   Created: comparison_speedup.csv")
     
     # CSV 4: GROWTH RATE ANALYSIS
     print("\n4. Creating comparison_growth_rate.csv...")
@@ -236,7 +236,7 @@ def create_comprehensive_comparison():
             matches_nlogn_q = abs(quick_growth - expected_nlogn) < expected_nlogn * 0.6
             writer.writerow(['Quick Sort', size1, quick1, size2, quick2, f"{size_growth:.2f}", f"{quick_growth:.2f}", 'O(n log n) avg', f"{expected_nlogn:.2f}", 'Yes' if matches_nlogn_q else 'Close'])
     
-    print("   ✓ Created: comparison_growth_rate.csv")
+    print("   Created: comparison_growth_rate.csv")
     
     # CSV 5: STATISTICS (NEW)
     print("\n5. Creating comparison_statistics.csv...")
@@ -271,7 +271,7 @@ def create_comprehensive_comparison():
             writer.writerow([f'{algo_name} Sort', 'Time (sec)', f"{time.min():.6f}", f"{time.max():.6f}", f"{time.mean():.6f}", 
                            f"{np.median(time):.6f}", f"{time.std():.6f}", f"{(time.std()/time.mean()*100):.2f}"])
     
-    print("   ✓ Created: comparison_statistics.csv")
+    print("   Created: comparison_statistics.csv")
     
     # CSV 6: EFFICIENCY ANALYSIS (NEW)
     print("\n6. Creating comparison_efficiency.csv...")
@@ -313,7 +313,7 @@ def create_comprehensive_comparison():
                 writer.writerow([f'{algo} Sort', size, f"{comp_per_elem:.2f}", f"{time_per_elem:.2f}", 
                                f"{efficiency:.6f}", category])
     
-    print("   ✓ Created: comparison_efficiency.csv")
+    print("   Created: comparison_efficiency.csv")
     
     # CSV 7: CASE ANALYSIS (NEW)
     print("\n7. Creating comparison_case_analysis.csv...")
@@ -346,21 +346,21 @@ def create_comprehensive_comparison():
                 writer.writerow([f'{algo} Sort', size, f"{best_time:.6f}", f"{avg_time:.6f}", f"{worst_time:.6f}", 
                                f"{ratio:.2f}", f"{variance:.2f}", stability])
     
-    print("   ✓ Created: comparison_case_analysis.csv")
+    print("   Created: comparison_case_analysis.csv")
     
     print("\n" + "="*80)
-    print("✓ ENHANCED COMPARISON CSV FILES COMPLETED!")
+    print("ENHANCED COMPARISON CSV FILES COMPLETED!")
     print("="*80)
     print("\nGenerated files:")
     print("  1. comparison_all_algorithms.csv    - Semua data lengkap (68 records)")
     print("  2. comparison_summary.csv            - Ringkasan best/worst per size")
     print("  3. comparison_speedup.csv            - Analisis speedup detail")
     print("  4. comparison_growth_rate.csv        - Verifikasi Big-O growth")
-    print("  5. comparison_statistics.csv         - ✨ Min/Max/Mean/Median/StdDev")
-    print("  6. comparison_efficiency.csv         - ✨ Comparisons & time per element")
-    print("  7. comparison_case_analysis.csv      - ✨ Best/Avg/Worst case stability")
-    print("\n✓ 7 CSV files ready for comprehensive analysis!")
-    print("✓ Perfect for research paper and presentation!")
+    print("  5. comparison_statistics.csv         -  Min/Max/Mean/Median/StdDev")
+    print("  6. comparison_efficiency.csv         -  Comparisons & time per element")
+    print("  7. comparison_case_analysis.csv      - Best/Avg/Worst case stability")
+    print("\n 7 CSV files ready for comprehensive analysis!")
+    print(" Perfect for research paper and presentation!")
     print("="*80)
 
 
